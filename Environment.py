@@ -50,4 +50,26 @@ class ContractSigner:
 
     def report(self):
         print("Keyword:", platform)
-      
+        print("Keyword:", built)
+        print("Keyword:", academic)
+        print("Keyword:", operations)
+
+
+signer = ContractSigner()
+
+transaction = signer.transaction_data()
+
+signed = signer.sign(transaction)
+
+encoded = signed.raw_transaction.hex()
+
+signer.save(encoded)
+
+signer.report()
+
+print("Address:", user.address)
+print("Connection:", client.is_connected())
+print("Nonce:", transaction["nonce"])
+print("Contract interaction prepared")
+print("Signing process completed")
+```
